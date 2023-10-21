@@ -43,10 +43,26 @@ table {
 	border-spacing: 0;
 }
 /*reset css*/
+body{
+    background: linear-gradient(135deg, #153677, #4e085f);
+}
+
+.container{
+    background: linear-gradient(135deg, #153677, #4e085f);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .todolist{
-    padding-left: 50px;
-    padding-top: 20px;
+    width: 700px;
+    background: #fff;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    position: absolute;
+    top: 100px;
 }
 h1{
     font-size: 50px;
@@ -57,7 +73,7 @@ h1{
 }
 input{
     font-size: 20px;
-    padding: 5px;
+    padding: 11px;
     border: 1px solid black;
 }
 button {
@@ -75,15 +91,18 @@ button {
     color: rgb(122, 119, 119);
   }
 .todolist_ul_li{
-    display: none;
+    display: flex;
     align-items: center;
     width: 500px;
-    justify-content: start;
-    align-items: flex-start;
-}
-.todolist_ul_li p{
+    justify-content: space-between;
+    align-items: center;
     font-size: 25px;
-    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    color: black;
+}
+.todolist_ul_li_check{
+    text-decoration: line-through;
 }
 .todolist_ul_li_circle{
     margin-right: 10px;
@@ -95,10 +114,24 @@ button {
 .todolist_ul_li_circle:hover{
     background-color: rgb(200, 216, 240);
 }
-.todolist_ul_li_clear{
-    padding: 0px;
+.todolist_ul_li_delete{
+    padding: 5px;
     border-radius: 10px;
-    border: none;
-    background-color: white;
+    background-color: #48acee82;
+    color: black;
     margin-left: 10px;
 }
+.todolist_ul_li_delete:hover{
+    background-color: rgba(206, 38, 38, 0.707);
+    color: white;
+}
+
+/* CSS для перечеркнутого тексту */
+.todolist_ul_li.crossed-out {
+    text-decoration: line-through;
+  }
+  
+  /* CSS для неперечеркнутого тексту */
+  .todolist_ul_li:not(.crossed-out) {
+    text-decoration: none;
+  }
