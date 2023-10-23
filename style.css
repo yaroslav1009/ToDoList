@@ -74,7 +74,8 @@ h1{
 input{
     font-size: 20px;
     padding: 11px;
-    border: 1px solid black;
+    background-color: rgba(128, 128, 128, 0.203);
+    border: none;
 }
 button {
     /* Основні стилі кнопки */
@@ -134,4 +135,14 @@ button {
   /* CSS для неперечеркнутого тексту */
   .todolist_ul_li:not(.crossed-out) {
     text-decoration: none;
+  }
+
+/*Mobile */
+@media (max-width: 800px) {
+    .todolist{
+      width: 60%;
+    }
+    .todolist_ul_li {
+        width: auto;
+    }
   }
