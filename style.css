@@ -145,4 +145,16 @@ button {
     .todolist_ul_li {
         width: auto;
     }
+    h1{
+        font-size: 30px;
+    }
+    input{
+        width: 200px;
+    }
+    button{
+        font-size: 10px;
+    }
+    .todolist_ul_li{
+        font-size: 20px;
+    }
   }
