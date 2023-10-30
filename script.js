@@ -3,7 +3,9 @@ let TaskValue = document.querySelector("#task");
 let ButtonAdd = document.querySelector("#ButtonAdd");
 let ButtonDelete = document.querySelector("#ButtonDelete");
 let ToDoList = document.querySelector(".todolist_ul");
+let ToDoLength = document.querySelector(".numbLength")
 let taskItems = [];
+ToDoLength.innerHTML = 0
 
 // Обробник події для натискання клавіші "Enter" у полі введення "Task"
 TaskValue.addEventListener('keydown', function(event) {
@@ -26,6 +28,7 @@ ButtonDelete.addEventListener("click", () => {
     // Очищаємо масив taskItems
     taskItems = [];
     saveData();
+    ToDoLength.innerHTML = 0
 });
 
 // Функція для додавання завдань та визначення стану перечеркнення тексту
@@ -52,8 +55,10 @@ function addButtonClickHandler() {
         li.addEventListener("click", () => {
             if (isCrossedOut) {
                 p.style.textDecoration = "none"; // Зняти перечеркнення
+                p.style.color = "black"
             } else {
                 p.style.textDecoration = "line-through"; // Перечеркнути текст
+                p.style.color = "red"
             }
             isCrossedOut = !isCrossedOut; // Змінюємо стан перечеркнення
             saveData();
@@ -64,12 +69,16 @@ function addButtonClickHandler() {
             ToDoList.removeChild(li);
             taskItems = taskItems.filter(item => item !== li); // Видаляємо з масиву
             saveData();
+            ToDoLength.innerHTML = taskItems.length
         });
+
+        ToDoLength.innerHTML = taskItems.length + 1
 
         ToDoList.appendChild(li);
         taskItems.push(li);
         TaskValue.value = "";
         saveData();
+        console.log(taskItems.length)
     }
 }
 

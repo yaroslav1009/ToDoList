@@ -59,7 +59,7 @@ body{
 .todolist{
     width: 700px;
     background: #fff;
-    padding: 40px 30px 70px;
+    padding: 40px 30px 16px;
     border-radius: 10px;
     position: absolute;
     top: 100px;
@@ -136,11 +136,20 @@ button {
   .todolist_ul_li:not(.crossed-out) {
     text-decoration: none;
   }
+  .length {
+    margin-top: 80px;
+    font-family: -webkit-standard;
+    font-size: 20px;
+  }
+  .numbLength{
+    position: relative;
+    top: 1px;
+  }
 
 /*Mobile */
 @media (max-width: 800px) {
     .todolist{
-      width: 60%;
+      width: 70%;
     }
     .todolist_ul_li {
         width: auto;
@@ -151,8 +160,29 @@ button {
     input{
         width: 200px;
     }
+    .todolist_ul_li{
+        font-size: 20px;
+    }
+  }
+  @media (max-width: 600px) {
+    .todolist{
+      width: 266px;
+    }
+    .todolist_ul_li {
+        width: auto;
+    }
     button{
-        font-size: 10px;
+        margin: 0px;
+        border: none;
+        font-size: 18px;
+    }
+    h1{
+        font-size: 43px;
+    }
+    input{
+        width: 200px;
+        width: 90%;
+        margin-bottom: 5px;
     }
     .todolist_ul_li{
         font-size: 20px;
